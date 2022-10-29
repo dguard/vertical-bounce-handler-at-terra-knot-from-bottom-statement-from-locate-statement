@@ -17,15 +17,15 @@
     let passThrough = {}
     // keep
 
-    const Pencil = window['@pencil/draft-compact-knot-from-cubic-project']['Pencil']
-    const DraftFabrikk = window['@pencil/draft-compact-knot-from-cubic-project']['DraftFabrikk']
+    const Pencil = window['@pencil/draft-compact-knot-locate-sticked-from-bottom-statement']['Pencil']
+    const DraftFabrikk = window['@pencil/draft-compact-knot-locate-sticked-from-bottom-statement']['DraftFabrikk']
 
     // keep !
     let passThroughFromBottom = {}
-    passThroughFromBottom['@pencil/draft-knot-from-cubic-project'] = {}
+    passThroughFromBottom['@pencil/draft-knot-locate-sticked-from-bottom-statement'] = {}
     // keep
 
-    passThrough['@pencil/draft-knot-from-cubic-project'] = function (spawnedPointerBelongings) {
+    passThrough['@pencil/draft-knot-locate-sticked-from-bottom-statement'] = function (spawnedPointerBelongings, passThroughKnot) {
 
 let canvas = document.querySelector('.statement-area').querySelector('.statement-at-front').querySelector('#scene')
 
@@ -57,11 +57,11 @@ let draftFabrikk = new DraftFabrikk()
 // follow #vertical-bounce-handler-isometric-from-bottom-projection-above-knot-at-draft-fabric-constructed
 
 // keep !
-passThroughFromBottom['@pencil/draft-knot-from-cubic-project']['FIELD_OF_VIEW'] = FIELD_OF_VIEW
-passThroughFromBottom['@pencil/draft-knot-from-cubic-project']['PROJECTION_CENTER_Y'] = PROJECTION_CENTER_Y
-passThroughFromBottom['@pencil/draft-knot-from-cubic-project']['PROJECTION_CENTER_X'] = PROJECTION_CENTER_X
+passThroughFromBottom['@pencil/draft-knot-locate-sticked-from-bottom-statement']['FIELD_OF_VIEW'] = FIELD_OF_VIEW
+passThroughFromBottom['@pencil/draft-knot-locate-sticked-from-bottom-statement']['PROJECTION_CENTER_Y'] = PROJECTION_CENTER_Y
+passThroughFromBottom['@pencil/draft-knot-locate-sticked-from-bottom-statement']['PROJECTION_CENTER_X'] = PROJECTION_CENTER_X
 
-passThroughFromBottom['@pencil/draft-knot-from-cubic-project']['canvas'] = ctx
+passThroughFromBottom['@pencil/draft-knot-locate-sticked-from-bottom-statement']['canvas'] = ctx
 
 let knotAtRectangle = draftFabrikk.constructKnotAtRectangle(/* use lines and verticles */ /* take */ parseFloat('0'), parseFloat('0'), parseFloat('0'))
 
@@ -77,7 +77,8 @@ let radius = getRandomInt(3, 3) * 10
 
 // keep !
 let originalSpawnedPointerBelongings = JSON.parse(JSON.stringify(spawnedPointerBelongings))
-spawnedPointerBelongings = JSON.parse(JSON.stringify(spawnedPointerBelongings))
+// spawnedPointerBelongings = JSON.parse(JSON.stringify(spawnedPointerBelongings))
+spawnedPointerBelongings = draftFabrikk.spawnPointerBelongingsAtRectangle(/* keep */ /* y, x, z */ spawnedPointerBelongings.y, spawnedPointerBelongings.x, debPointer, /* radius, d, f, frontRatio */ radius, 0.9, 0.4, 1, /* keep */ /* debthScaleRatio, frontScaleRatio, profileScaleRatio */ 1 * 4 * 1.2, 1 * 2 * 1.4, 1 * 2)
 // keep !
 
 let pencil = new Pencil()
@@ -100,7 +101,7 @@ pencil.remember(knotAtRectangleRemaining)
 pencil.rememberSpawn(knotAtRectangleRemaining, spawnedPointerBelongings)
 
 // keep
-let knot1 = draftFabrikk.constructKnot(/* keep */ /* let me use bounced memory */ /* y, x, z */ Math.random() * 0.5, Math.random() * 0.5, Math.random() * 0.2, radius, 0.9, 0.4, 1, /* keep */ 1 * 4 * 2 * 2, 1 * 4 * 2 * 1.2, 1 * 4 * 2 * 1.4 * 1.2)
+let knot1 = draftFabrikk.constructKnot(/* keep */ /* let me use bounced memory */ /* y, x, z */ Math.random() * 0.5, Math.random() * 0.5, Math.random() * 0.2, radius, 0.9, 0.4, 1, /* keep */ 1 * 4 * 2, 1, 1 * 4 * 1.7)
 pencil.useKnot(knot1)
 
 // use #vertical-bounce-handler-in-relative-size
@@ -113,6 +114,10 @@ for(let verticlesRemaining = Array.from(Array(4)).concat([[[1, '-'].reverse().jo
     pencil.remember(knotAtRectConstructed)
     pencil.rememberSpawn(knotAtRectConstructed, spawnedPointerBelongings)
 }
+// are you sure?
+passThroughKnot && (passThroughKnot.fromBottomStatement = knot1)
+
+// keep !
 pencil.draw()
 
 // keep !
@@ -210,9 +215,9 @@ pencil.draw()
 
 }
 // keep
-window['@pencil/draft-knot-from-cubic-project'] = {
-    passThrough: passThrough['@pencil/draft-knot-from-cubic-project'],
-    passThroughFromBottom: passThroughFromBottom['@pencil/draft-knot-from-cubic-project']
+window['@pencil/draft-knot-locate-sticked-from-bottom-statement'] = {
+    passThrough: passThrough['@pencil/draft-knot-locate-sticked-from-bottom-statement'],
+    passThroughFromBottom: passThroughFromBottom['@pencil/draft-knot-locate-sticked-from-bottom-statement']
 }
 // keep
 

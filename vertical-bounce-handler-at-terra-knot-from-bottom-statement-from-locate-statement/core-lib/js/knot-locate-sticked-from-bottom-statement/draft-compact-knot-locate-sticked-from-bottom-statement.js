@@ -225,8 +225,8 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
             if([4].indexOf(counter) !== -1) {
                 pointerBelongingsAtTopLeftComputed = {
                     // z
-                    y: v1Project.y,
-                    x: v1Project.x
+                    y: v2Project.y,
+                    x: v2Project.x
                 }
             }
             if([3].indexOf(counter) !== -1) {
@@ -247,10 +247,14 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
             if([7].indexOf(counter) !== -1) {
                 pointerBelongingsAtRightTopComputed = {
                     // z
-                    y: v1Project.y,
-                    x: v1Project.x
+                    y: v2Project.y,
+                    x: v2Project.x
                 }
             }
+
+            // keep
+
+            // keep !
 
             // keep !
             // 4, 3, 2, 7
@@ -262,6 +266,9 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
             // ctx.stroke()
         }
         // keep
+
+        that.constructPointerBelongingsFromBottom()
+
         return knotLocateStickedFromBottomStatement
 
         // keep

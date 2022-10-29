@@ -123,11 +123,11 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
         that.x = x
         that.z = z
     }
-    const FIELD_OF_VIEW = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['FIELD_OF_VIEW']
+    const FIELD_OF_VIEW = window['@pencil/draft-knot-labirint-from-bottom-statement']['passThroughFromBottom']['FIELD_OF_VIEW']
 
-    const PROJECTION_CENTER_Y = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['PROJECTION_CENTER_Y']
+    const PROJECTION_CENTER_Y = window['@pencil/draft-knot-labirint-from-bottom-statement']['passThroughFromBottom']['PROJECTION_CENTER_Y']
 
-    const PROJECTION_CENTER_X = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['PROJECTION_CENTER_X']
+    const PROJECTION_CENTER_X = window['@pencil/draft-knot-labirint-from-bottom-statement']['passThroughFromBottom']['PROJECTION_CENTER_X']
 
     that.project = function (y, x, z) {
         let SIZE_PROJECTION = FIELD_OF_VIEW / (FIELD_OF_VIEW + z)
@@ -165,8 +165,8 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
 
         // keep !
 
-        const handleProjectAt1stIteration = window['@pencil/handle-knot-from-cubic-project']['handleProjectAt1stIteration']
-        const handleProjectAt2ndIteration = window['@pencil/handle-knot-from-cubic-project']['handleProjectAt2ndIteration']
+        const handleProjectAt1stIteration = window['@pencil/handle-knot-labirint-from-bottom-statement']['handleProjectAt1stIteration']
+        const handleProjectAt2ndIteration = window['@pencil/handle-knot-labirint-from-bottom-statement']['handleProjectAt2ndIteration']
 
         // keep
         for(let i = 0; i < lines.length; i++) {
@@ -198,8 +198,8 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
             } else {
                 continue
             }
-            let ctx = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['canvas']
-            // console.log(window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom'])
+            let ctx = window['@pencil/draft-knot-labirint-from-bottom-statement']['passThroughFromBottom']['canvas']
+            // console.log(window['@pencil/knot-labirint-from-bottom-statement']['passThroughFromBottom'])
 
             ctx.beginPath()
             ctx.moveTo(v1Project.x, v1Project.y)
@@ -241,8 +241,8 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
                 continue
             }
 
-            let ctx = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['canvas']
-            // console.log(window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom'])
+            let ctx = window['@pencil/draft-knot-labirint-from-bottom-statement']['passThroughFromBottom']['canvas']
+            // console.log(window['@pencil/knot-labirint-from-bottom-statement']['passThroughFromBottom'])
 
             ctx.beginPath()
             ctx.moveTo(v1Project.x, v1Project.y)
@@ -253,7 +253,7 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
     }
 }
 
-window['@pencil/draft-compact-knot-labirint'] = {
+window['@pencil/draft-compact-knot-labirint-from-bottom-statement'] = {
     DraftFabrikk,
     Pencil
 }

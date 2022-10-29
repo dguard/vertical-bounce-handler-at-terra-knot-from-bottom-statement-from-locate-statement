@@ -21,9 +21,9 @@ let topRightProjectionPointer
 
 function handleProjectAt1stIteration(v1Project, v2Project, /* keep */ profileRatio, frontRatio, debthRatio, i) {
     // keep
-    const PROJECTION_CENTER_Y = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['PROJECTION_CENTER_Y']
+    const PROJECTION_CENTER_Y = window['@pencil/draft-knot-labirint-from-bottom-statement']['passThroughFromBottom']['PROJECTION_CENTER_Y']
 
-    const PROJECTION_CENTER_X = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['PROJECTION_CENTER_X']
+    const PROJECTION_CENTER_X = window['@pencil/draft-knot-labirint-from-bottom-statement']['passThroughFromBottom']['PROJECTION_CENTER_X']
 
     if([2].indexOf(i) !== -1) {
         bouncedPoints[[v1Project.y, v1Project.x].join('_')] = {
@@ -230,9 +230,9 @@ function handleProjectAt2ndIteration(loopPointer, v1Project, v2Project, profileR
     // keep
     let loopPointerBelongings = JSON.stringify(loopPointer)
 
-    const PROJECTION_CENTER_Y = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['PROJECTION_CENTER_Y']
+    const PROJECTION_CENTER_Y = window['@pencil/draft-knot-labirint-from-bottom-statement']['passThroughFromBottom']['PROJECTION_CENTER_Y']
 
-    const PROJECTION_CENTER_X = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['PROJECTION_CENTER_X']
+    const PROJECTION_CENTER_X = window['@pencil/draft-knot-labirint-from-bottom-statement']['passThroughFromBottom']['PROJECTION_CENTER_X']
 
 
     if([2].indexOf(i) !== -1) {
@@ -393,7 +393,7 @@ function handleProjectAt2ndIteration(loopPointer, v1Project, v2Project, profileR
         v2Project.x = x
     }
 }
-window['@pencil/draft-handle-knot-from-cubic-project'] = {
+window['@pencil/draft-handle-knot-labirint-from-bottom-statement'] = {
     handleProjectAt1stIteration,
     handleProjectAt2ndIteration
 }

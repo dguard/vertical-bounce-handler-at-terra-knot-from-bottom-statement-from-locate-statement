@@ -33,7 +33,7 @@ function handleProjectAt2ndIteration(loopPointer, v1Project, v2Project, profileR
 
 }
 
-window['@pencil/handle-knot-from-cubic-project'] = {
+window['@pencil/handle-terra-knot-from-bottom-statement'] = {
     handleProjectAt1stIteration,
     handleProjectAt2ndIteration
 }

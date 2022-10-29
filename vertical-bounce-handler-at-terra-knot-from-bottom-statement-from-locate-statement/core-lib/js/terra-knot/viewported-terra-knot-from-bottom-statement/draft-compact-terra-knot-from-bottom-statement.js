@@ -1,4 +1,5 @@
 // keep
+(function(){
 
 function Pencil() {
     let that = this
@@ -97,3 +98,10 @@ function DraftFabrikk() {
         return localViewportBelongings
     }
 }
+// keep !
+window['@pencil/draft-compact-terra-knot-from-bottom-statement'] = {
+    DraftFabrikk,
+    Pencil
+}
+
+})()

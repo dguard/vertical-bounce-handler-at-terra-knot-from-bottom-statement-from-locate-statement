@@ -6,10 +6,7 @@
 // keep !
 
 // keep
-// keep @core-lib/draft-compact.js
-
-// keep
-(function() {
+(function(){
 
 function DraftFabrikk(){
     let that = this
@@ -123,11 +120,11 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
         that.x = x
         that.z = z
     }
-    const FIELD_OF_VIEW = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['FIELD_OF_VIEW']
+    const FIELD_OF_VIEW = window['@pencil/draft-at-bounced']['passThroughFromBottom']['FIELD_OF_VIEW']
 
-    const PROJECTION_CENTER_Y = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['PROJECTION_CENTER_Y']
+    const PROJECTION_CENTER_Y = window['@pencil/draft-at-bounced']['passThroughFromBottom']['PROJECTION_CENTER_Y']
 
-    const PROJECTION_CENTER_X = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['PROJECTION_CENTER_X']
+    const PROJECTION_CENTER_X = window['@pencil/draft-at-bounced']['passThroughFromBottom']['PROJECTION_CENTER_X']
 
     that.project = function (y, x, z) {
         let SIZE_PROJECTION = FIELD_OF_VIEW / (FIELD_OF_VIEW + z)
@@ -142,7 +139,7 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
     // #descending-from-the-sun
     let lines = [[0, 1], [1, 2], [2, 3], [3, 0], [3, 4], [4, 5], [5, 0], /* keep */ [2, 6], /* keep ! */ [6, 7], /* that's mine */ /*[7, 8]*/]
     let verticles
-
+    
 
     // keep
     that.useKnotAtRectangle = function (queueKnot) {
@@ -165,8 +162,8 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
 
         // keep !
 
-        const handleProjectAt1stIteration = window['@pencil/handle-knot-from-cubic-project']['handleProjectAt1stIteration']
-        const handleProjectAt2ndIteration = window['@pencil/handle-knot-from-cubic-project']['handleProjectAt2ndIteration']
+        const handleProjectAt1stIteration = window['@pencil/draft-handle-at-bounced']['handleProjectAt1stIteration']
+        const handleProjectAt2ndIteration = window['@pencil/draft-handle-at-bounced']['handleProjectAt2ndIteration']
 
         // keep
         for(let i = 0; i < lines.length; i++) {
@@ -198,8 +195,8 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
             } else {
                 continue
             }
-            let ctx = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['canvas']
-            // console.log(window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom'])
+            let ctx = window['@pencil/draft-at-bounced']['passThroughFromBottom']['canvas']
+            console.log(window['@pencil/draft-at-bounced']['passThroughFromBottom'])
 
             ctx.beginPath()
             ctx.moveTo(v1Project.x, v1Project.y)
@@ -241,8 +238,8 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
                 continue
             }
 
-            let ctx = window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom']['canvas']
-            // console.log(window['@pencil/draft-knot-from-cubic-project']['passThroughFromBottom'])
+            let ctx = window['@pencil/draft-at-bounced']['passThroughFromBottom']['canvas']
+            console.log(window['@pencil/draft-at-bounced']['passThroughFromBottom'])
 
             ctx.beginPath()
             ctx.moveTo(v1Project.x, v1Project.y)
@@ -253,11 +250,10 @@ function RectangleOnPaper(radius, frontRatio, p, d, debthScaleRatio, profileScal
     }
 }
 
-window['@pencil/draft-compact-knot-from-cubic-project'] = {
+window['@pencil/draft-compact-at-bounced'] = {
     DraftFabrikk,
     Pencil
 }
-
 })()
 // keep
 // don't stay here
