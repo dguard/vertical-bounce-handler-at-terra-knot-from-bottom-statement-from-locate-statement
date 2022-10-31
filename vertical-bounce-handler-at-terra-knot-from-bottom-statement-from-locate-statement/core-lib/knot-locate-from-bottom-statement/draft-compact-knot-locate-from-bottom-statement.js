@@ -233,6 +233,38 @@ function KnotAtProfileStatement() {
     }
 }
 
+function KnotLocatePayloadComputed() {
+    let that = this
+
+    let queuePayload = []
+
+    that.payloadFrom = function () {
+        // keep
+    }
+    that.put = function () {
+        // keep
+    }
+
+    that.compute = function () {
+        // keep
+    }
+}
+
+function KnotLocateStickd() {
+    let that = this
+
+    let queueStickd = []
+    that.locateFrom = function (y, x) {
+        // keep
+    }
+
+    that.put = function (pointerBelongings) {
+        // keep
+    }
+    that.compute = function () {
+        // keep
+    }
+}
 
 function KnotAtFrontStatement() {
     let that = this
@@ -288,6 +320,233 @@ function KnotFromBottomStatement(pencil) {
 
             }
         })
+
+        let dictSpawnFromBottomStatement = {}
+        // that's is program style, knot human style
+        let queueSpawnFromBottomStatementComputed = []
+
+        let knotSelected
+
+        // knotLocate
+        // knotLocateFromBottomStatement
+
+        // stackLocator
+
+        // let me think
+        // we cannot use pencil here
+        // pencilThroughComputed
+        // knotFromComputed
+
+        let dcsTar = pencil
+
+        let accuratePencil = dcsTar.fromAccuratePencil()
+
+        let knotLocateStickd = new KnotLocateStickd()
+        let sceneSpawnPointerBelongings = new SceneSpawnPointerBelongings()
+
+        let knotLocatePayload = new KnotLocatePayloadComputed()
+
+        // keep !
+        knotFromBottomStatement.ctx.addEventListener('click', function (event) {
+            let providedY = event.clientY
+            let providedX = event.clientX
+
+            // traversar sends straight request
+            // and receives flipped request
+
+            let pointerBelongingsAtKnot = document.querySelector('.statement-from-bounced').querySelector('.pointer-belongings-at-knot')
+
+            // pointerBelongingsAtKnot.style.top = providedY
+            // pointerBelongingsAtKnot.style.left = providedX
+            // you see, there is double save ! don't speak on phone anymore . please . !
+            // use telegram !
+            if(['intoKnotLocate'].indexOf(knotSelected) !== -1) {
+                // atKnotFromComputed below knotAbove from belowConnected
+                // normalizedKnotBelow
+
+                // keep
+            }
+
+            if(['intoKnotFromBottomStatement'].indexOf(knotSelected) !== -1) {
+                // atKnotFromComputed below knotAbove from connected
+                // normalizedKnot
+
+                // keep
+            }
+
+            if(['intoKnotFromProfile'].indexOf(knotSelected) !== -1) {
+                // atKnotFromComputed below knotAbove from profileConnected
+                // normalizedProfileKnot
+
+                // keep
+            }
+
+            if(['intoKnotFromFront'].indexOf(knotSelected) !== -1) {
+                // atKnotFromComputed below knotAbove from frontConnected
+                // normalizedFrontKnot
+
+                // keep
+            }
+
+            if(['connectThrough'].indexOf(knotSelected) !== -1) {
+                // atKnotFromComputed below knotAbove from connected
+
+                // normalizedKnot
+
+                // keep
+                // atKnotFromComputed below knotAbove
+
+                // accuratePencil.draw()
+            }
+
+
+            if(['pointerFromProfile'].indexOf(knotSelected) !== -1) {
+                // atPointerBelongingsFromKnotFromComputed
+
+                let pointerBelongings = new PoimterBelongingsAtKnotFromProfile()
+
+                let pointerBelongingsFromBottomStatement = accuratePencil.atPointerBelongingsFromBottomStatement()
+
+                pointerBelongings.fromBottomStatement(pointerBelongingsFromBottomStatement)
+                pointerBelongings.assignCoordinates(providedY, providedX)
+
+                accuratePencil.rememberAccurateSample(sceneSpawnPointerBelongings, pointerBelongings)
+                accuratePencil.useScene(sceneSpawnPointerBelongings)
+
+                accuratePencil.draw()
+
+                return /* keep */
+            }
+
+            if(['pointerFromFront'].indexOf(knotSelected) !== -1) {
+                // atPointerBelongingsFromKnotFromComputed
+            }
+
+            // dictSpawnFromBottomStatement
+            let knotFound = knotLocateStickd.locateFrom(providedY, providedX)
+            knotFound && (knotSelected = 'selectKnotLocate')
+
+            if(['selectKnotLocate'].indexOf(knotSelected) !== -1) {
+                // keep
+                // knotFromComputed below knotAbove
+
+                // dictSpawnFromBottomStatement contains y, x
+
+                // we cannot get payload in real world, only in computed
+                knotPayload = knotLocatePayloadComputed.payloadFrom(knotFound.id)
+
+                // knotComputed updated with knotPayload
+                // change status for knotFromComputed
+            }
+
+            if(['spawnPointer'].indexOf(knotSelected) !== -1) {
+                // atKnotFromComputed below knotAbove
+                // keep
+            }
+
+            // its actually heap, but we are using programmic style with dict
+            dictSpawnFromBottomStatement[JSON.stringify({y: providedY, x: providedX})] = { y: providedY, x: providedX }
+
+            let pointerBelongingsAtKnotLocate = new PointerBelongingsAtKnotFromBottomStatement()
+            pointerBelongingsAtKnotLocate.assignCoordinates(providedY, providedX)
+
+            pointerBelongingsAtKnotLocate.compute()
+
+            accuratePencil.rememberAccurateSample(sceneSpawnPointerBelongings, pointerBelongingsAtKnotLocate)
+            accuratePencil.useScene(sceneSpawnPointerBelongings)
+
+            let pointerBelongingsFromFront = pointerBelongingsAtKnotLocate.getPointerBelongingsFromFrontStatement()
+
+            dictSpawnFromBottomStatement[JSON.stringify({y: providedY, x: providedX})]['pointerBelongings'] = pointerBelongingsFromFront
+            // keep memory protect
+
+            knotLocateStickd.put(pointerBelongingsFromFront)
+
+            // keep
+            knotLocatePayloadComputed.put(pointerBelongingsFromFront.id, /* payload details */)
+
+            // sorry, it's knot \karmic
+
+            // keep
+            accuratePencil.draw()
+
+            return /* keep */
+
+            // pointerBelongingsAtKnot.style.top = providedY
+            // pointerBelongingsAtKnot.style.left = providedX
+
+            // keep ! rememberSpawn
+
+            if(that.pointerBelongingsAtTopLeft.y <= providedY && that.pointerBelongingsAtTopLeft.x <= providedX
+                && providedY <= that.pointerBelongingsAtBottomLeft.y /* keep ! */ && providedX >= that.pointerBelongingsAtBottomLeft.x
+                && providedY <= that.pointerBelongingsAtBottomRight.y && providedX <= that.pointerBelongingsAtBottomRight.x
+                && that.pointerBelongingsAtRightTop.y <= providedY && providedX <= that.pointerBelongingsAtRightTop.x) {
+
+            }
+
+            // keep
+            if(that.pointerBelongingsAtTopLeft.y <= providedY && that.pointerBelongingsAtTopLeft.x <= providedX
+                && providedY <= that.pointerBelongingsAtBottomLeft.y && providedX <= that.pointerBelongingsAtBottomLeft.x
+                && that.pointerBelongingsAtBottomRight.y <= providedY && that.pointerBelongingsAtBottomRight.x <= providedX
+                && that.pointerBelongingsAtTopLeft.y <= providedY && that.pointerBelongingsAtTopLeft.x <= providedX
+            ) {
+
+            }
+            // keep !
+
+            // you remember straight
+            // and flipped
+
+            // keep !
+
+            if(that.pointerBelongingsAtTopLeft.y >= providedY && that.pointerBelongingsAtTopLeft.x >= providedX
+                && that.pointerBelongingsAtBottomLeft.y >= providedY && that.pointerBelongingsAtBottomLeft.x >= providedX
+                && that.pointerBelongingsAtBottomRight.y <= providedY && that.pointerBelongingsAtBottomRight.x <= providedX
+                && that.pointerBelongingsAtRightTop.y <= providedY && that.pointerBelongingsAtRightTop.x <= providedX
+            ) {
+                // stack
+                // construct preview knot
+                // drawLineFromBottomStatement
+
+                // drawLineAtFrontStatement
+                // drawLineAtProfileStatement
+
+                // pencil.draw()
+                // keep !
+            }
+            // use double save
+        })
+
+        // mouseover tooltip -> selectKnotLocateThroughClick -> useThroughClick -> connect
+
+        // mouseover connectThrough tooltip intoKnotFromProfile
+        // mouseover connectThrough toolip intoKnotFromFront
+
+        // mouseover stabilizePointer
+        // mouseover connectThrough tooltip intoKnotFromBottomStatement
+        // keep ! dictSpawnFromBottomStatement, dictPointerFromFront, dictPointerFromProfile
+
+        // keep knotFromBottomStatement
+
+        return knotFromBottomStatement /* keep */
+
+        // keep
+        knotFromBottomStatement.ctx.addEventListener('mouseover', function(event) {
+            let providedY = event.clientY
+            let providedX = event.clientX
+
+            let pointerBelongingsAtKnot = document.querySelector('.statement-from-bounced').querySelector('.pointer-belongings-at-knot')
+
+            if(that.pointerBelongingsAtTopLeft.y >= providedY && that.pointerBelongingsAtTopLeft.x >= providedX
+                && that.pointerBelongingsAtBottomLeft.y >= providedY && that.pointerBelongingsAtBottomLeft.x >= providedX
+                && that.pointerBelongingsAtBottomRight.y <= providedY && that.pointerBelongingsAtBottomRight.x <= providedX
+                && that.pointerBelongingsAtRightTop.y <= providedY && that.pointerBelongingsAtRightTop.x <= providedX
+            ) {
+                pointerBelongingsAtKnot.style.top = event.clientY
+                pointerBelongingsAtKnot.style.left = event.clientX
+
+            }
+        })
         // keep !
 
         knotFromBottomStatement.ctx.addEventListener('click', function (event) {
@@ -305,6 +564,8 @@ function KnotFromBottomStatement(pencil) {
             // use telegram !
             pointerBelongingsAtKnot.style.top = providedY
             pointerBelongingsAtKnot.style.left = providedX
+
+            // keep ! rememberSpawn
 
             if(that.pointerBelongingsAtTopLeft.y <= providedY && that.pointerBelongingsAtTopLeft.x <= providedX
                 && providedY <= that.pointerBelongingsAtBottomLeft.y /* keep ! */ && providedX >= that.pointerBelongingsAtBottomLeft.x
