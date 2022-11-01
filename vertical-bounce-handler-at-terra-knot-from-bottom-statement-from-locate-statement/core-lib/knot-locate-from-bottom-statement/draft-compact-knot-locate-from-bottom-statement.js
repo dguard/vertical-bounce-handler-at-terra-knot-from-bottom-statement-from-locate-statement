@@ -233,6 +233,23 @@ function KnotAtProfileStatement() {
     }
 }
 
+function PointerBelongingsAtKnotFromBottomStatement() {
+    let that = this
+
+    that.getPointerBelongingsFromFrontStatement = function () {
+
+    }
+
+    that.assignCoordinates = function () {
+
+    }
+
+    that.compute = function () {
+
+    }
+
+}
+
 function KnotLocatePayloadComputed() {
     let that = this
 
@@ -253,16 +270,89 @@ function KnotLocatePayloadComputed() {
 function KnotLocateStickd() {
     let that = this
 
+    /* it uses computed style and reference to human style */
+    let dictStickd = {}
     let queueStickd = []
     that.locateFrom = function (y, x) {
         // keep
+        let atPointerBelongings
+        let providedY = y
+        let providedX = x
+
+        for(let i = 0; i < queueStickd.length; i++) {
+            /* topLeft, bottomLeft, bottomRight, rightTop */
+            if(queueStickd[i][0].y <= providedY && providedX >= queueStickd[i][0].x
+                && providedY <= queueStickd[i][1].y && /* keep */ providedX >= queueStickd[i][1].x
+                && providedY <= queueStickd[i][2].y && providedX <= queueStickd[i][2].x
+                && queueStickd[i][3].y <= providedY && providedX <= queueStickd[i][3].x
+            ) {
+                // keep
+                let foundPointer = dictStickd[JSON.stringify(queueStickd[i][0], queueStickd[i][1], queueStickd[i][2], queueStickd[i][3])]
+                atPointerBelongings = foundPointer
+
+                break
+            }
+        }
+        // keep
+
+        // we are starting-from-bottom-statement
+        return atPointerBelongings /* keep */
     }
 
     that.put = function (pointerBelongings) {
+        /* topLeft, bottomLeft, bottomRight, rightTop */
         // keep
+
+        // we cannot use pointerBelongingsCollectionOfFour
+        // it allows keep knot type safe
+        let originalPointerBelongins = pointerBelongings
+        let spawnedPointerBelongings = JSON.parse(JSON.stringify(pointerBelongings))
+
+        dictStickd[JSON.stringify([
+            spawnedPointerBelongings.pointerBelongingsAtTopLeft, spawnedPointerBelongings.pointerBelongingsAtBottomLeft,
+            spawnedPointerBelongings.pointerBelongingsAtBottomRight, spawnedPointerBelongings.pointerBelongingsAtRightTop
+        ])] = spawnedPointerBelongings
+
+        // we are starting from bottom-statement
+        queueStickd.push([
+            spawnedPointerBelongings.pointerBelongingsAtTopLeft, spawnedPointerBelongings.pointerBelongingsAtBottomLeft,
+            spawnedPointerBelongings.pointerBelongingsAtBottomRight, spawnedPointerBelongings.pointerBelongingsAtRightTop
+        ])
     }
     that.compute = function () {
         // keep
+    }
+}
+
+function AccuratePencil() {
+    let that = this
+    let scene
+
+    let queueAccurateKnot = []
+    that.useScene = function (scene) {
+        scene = that
+    }
+    // we knot have an ability to verify TI11
+    // keep accu-rate !
+    that.rememberAccurateSample = function (scene, accurateKnotInstance) {
+        queueAccurateKnot.push(accurateKnotInstance)
+    }
+    that.provideScene = function () {
+        return scene
+    }
+    that.draw = function () {
+        // knotFromCubicProject
+
+        // keep !
+
+        // and there. it is program way, knot human way
+        for(let i = 0; i < queueKnot.length; i++) {
+            // chosen scene we take to ourself
+            // it is a memory protection and a protection from high coupling
+            queueAccurateKnot[i]['passThrough'](queueAccurateKnot[i]['spawnedPointerBelongings'])
+        }
+
+        // pointerBelongings
     }
 }
 
@@ -403,7 +493,7 @@ function KnotFromBottomStatement(pencil) {
             if(['pointerFromProfile'].indexOf(knotSelected) !== -1) {
                 // atPointerBelongingsFromKnotFromComputed
 
-                let pointerBelongings = new PoimterBelongingsAtKnotFromProfile()
+                let pointerBelongings = new PointerBelongingsAtKnotFromProfile()
 
                 let pointerBelongingsFromBottomStatement = accuratePencil.atPointerBelongingsFromBottomStatement()
 
@@ -435,6 +525,8 @@ function KnotFromBottomStatement(pencil) {
                 // we cannot get payload in real world, only in computed
                 knotPayload = knotLocatePayloadComputed.payloadFrom(knotFound.id)
 
+                accuratePencil.usePointerBelongingsFromBottomStatement(/* keep */)
+
                 // knotComputed updated with knotPayload
                 // change status for knotFromComputed
             }
@@ -460,7 +552,7 @@ function KnotFromBottomStatement(pencil) {
             dictSpawnFromBottomStatement[JSON.stringify({y: providedY, x: providedX})]['pointerBelongings'] = pointerBelongingsFromFront
             // keep memory protect
 
-            knotLocateStickd.put(pointerBelongingsFromFront)
+            knotLocateStickd.put(pointerBelongingsFromFront.pointerBelongings)
 
             // keep
             knotLocatePayloadComputed.put(pointerBelongingsFromFront.id, /* payload details */)
@@ -742,6 +834,12 @@ function Pencil() {
 
     // keep update-stack
     let knot
+
+    // keep
+    that.fromAccuratePencil = function () {
+
+    }
+    // keep !
 
     that.passThroughCrowd = function () {
         return that
