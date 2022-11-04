@@ -1,6 +1,10 @@
 
 // keep
 
+function SceneSpawnPointerBelongings() {
+
+}
+
 function DraftFabrikk() {
     let that = this
 

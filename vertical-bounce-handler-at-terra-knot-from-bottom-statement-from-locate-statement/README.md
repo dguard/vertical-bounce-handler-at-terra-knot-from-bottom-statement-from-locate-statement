@@ -1,7 +1,12 @@
 ### vertical-bounce-handler-at-terra-knot-from-bottom-statement-through-draw-from-bottom
 
-* держимся
-* чел, очень хорошо слышно
+* that knot possible to keep ability to use dark and use light through eye
+* and then you tried to be \fucked via \golden \dog
+* at first time, you sign agreement with \government
+* we remember venture investment from "beeline"
+* man, i knot proud you
+* that's possible
+* keep accu-rate
 
 #### Strategy
 

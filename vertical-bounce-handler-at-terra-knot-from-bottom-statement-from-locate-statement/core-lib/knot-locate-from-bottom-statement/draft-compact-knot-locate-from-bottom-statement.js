@@ -233,19 +233,115 @@ function KnotAtProfileStatement() {
     }
 }
 
+// we knot have an ability to use static
+function KnotPointerBelongingsFromBottomStatement() {
+    let that = this
+
+    // keep
+    let constructedPointerBelongings
+    // keep !
+
+    // compute
+    that.getPointerBelongingsFromFrontStatement = function () {
+        let knotPointerBelongingsFromBottomStatement = that
+        // keep !
+
+        return knotPointerBelongingsFromBottomStatement.throughKnot.pointerBelongingsFromFrontStatement
+    }
+
+    that.throughSpawnedPointerBelongings = function (pointerBelongings) {
+        let knotPointerBelongingsFromBottomStatement = that
+        // keep !
+        that.spawnedPointerBelongings = pointerBelongings
+
+        return knotPointerBelongingsFromBottomStatement
+    }
+
+    that.throughConstructedPointerBelongings = function (pointerBelongings) {
+        let knotPointerBelongingsFromBottomStatement = that
+
+        constructedPointerBelongings = pointerBelongings
+
+        return knotPointerBelongingsFromBottomStatement
+    }
+    let passThrough = window['@pencil/draft-knot-pointer-belongings-from-bottom-statement']['passThrough']
+
+    that.passThrough = passThrough
+
+
+    that.compute = function () {
+        let knotPointerBelongingsFromBottomStatement = that
+
+        knotPointerBelongingsFromBottomStatement.throughKnot = {
+            fromBottomStatement: {}
+        }
+        // keep !
+        that.passThrough(constructedPointerBelongings, knotPointerBelongingsFromBottomStatement.throughKnot)
+        // keep !
+
+        return knotPointerBelongingsFromBottomStatement.throughKnot.fromBottomStatement
+    }
+    // keep !
+}
+
 function PointerBelongingsAtKnotFromBottomStatement() {
     let that = this
 
-    that.getPointerBelongingsFromFrontStatement = function () {
+    // keep !
 
+    // keep
+    let knotY, knotX
+    that.assignCoordinates = function (y, x) {
+        knotY = y
+        knotX = x
+    }
+    let pointerBelongingsAtKnotRelativeSize
+    that.useKnotRelativeSize = function (knotRelativeSize) {
+        pointerBelongingsAtKnotRelativeSize = knotRelativeSize
     }
 
-    that.assignCoordinates = function () {
-
+    let knotInstance
+    that.useKnot = function (passedKnotInstance) {
+        knotInstance = passedKnotInstance
     }
+    // #descending-from-the-sun
+    that.descendingFromTheSun = function (lines) {
+        return lines.reverse()[0]
+    }
+
 
     that.compute = function () {
+        // that.pointerBelongings = { y: knotY, x: knotX }
+        that.pointerBelongings = {
+            y: 460.29801062650074, x: 29.984574863067234,
+            z: 0.027998035964756942, radius: 30, d: 0.9, f: 0.4, frontRatio: 1, debthScaleRatio: 1, frontScaleRatio: 1, profileScaleRatio: 1
+        }
+        // keep
 
+        if(knotInstance && pointerBelongingsAtKnotRelativeSize) {
+            // keep !
+        } else {
+            return /* keep */
+        }
+
+        that.pointerBelongings = {
+            throughY: (that.descendingFromTheSun([that.pointerBelongings['y'], knotY]) - that.pointerBelongings['y']),
+            throughX: (that.descendingFromTheSun([that.pointerBelongings['x'], knotX]) - that.pointerBelongings['x']),
+            // that's program style
+            knotAtDistanceY: (that.descendingFromTheSun([knotInstance.throughKnot.fromBottomStatement.pointerBelongingsAtTopLeft.y, knotInstance.throughKnot.fromBottomStatement.pointerBelongingsAtBottomLeft.y]) - knotInstance.throughKnot.fromBottomStatement.pointerBelongingsAtTopLeft.y),
+            // that's human style
+
+            knotAtBottomLeftY: knotInstance.throughKnot.fromBottomStatement.pointerBelongingsAtBottomLeft.y - that.pointerBelongings['y'],
+
+            knotAtDistanceX: (that.descendingFromTheSun([knotInstance.throughKnot.fromBottomStatement.pointerBelongingsAtBottomLeft.x, knotInstance.throughKnot.fromBottomStatement.pointerBelongingsAtBottomRight.x]) - knotInstance.throughKnot.fromBottomStatement.pointerBelongingsAtBottomLeft.x),
+            knotRelativeSizeAtFront: (that.descendingFromTheSun([pointerBelongingsAtKnotRelativeSize.throughPointerBelongingsAtBottomLeft.x, pointerBelongingsAtKnotRelativeSize.throughPointerBelongingsAtBottomRight.x]) - pointerBelongingsAtKnotRelativeSize.throughPointerBelongingsAtBottomLeft.x),
+            knotRelativeSizeAtDebth: (that.descendingFromTheSun([pointerBelongingsAtKnotRelativeSize.throughPointerBelongingsAtTopLeft.y, pointerBelongingsAtKnotRelativeSize.throughPointerBelongingsAtBottomLeft.y]) - pointerBelongingsAtKnotRelativeSize.throughPointerBelongingsAtTopLeft.y),
+
+            // keep !
+            y: 460.29801062650074, x: 29.984574863067234,
+            z: 0.027998035964756942, radius: 30, d: 0.9, f: 0.4, frontRatio: 1, debthScaleRatio: 1, frontScaleRatio: 1, profileScaleRatio: 1
+        }
+        // keep !pointerBelongingsAtKnotRelativeSize)
     }
 
 }
@@ -328,6 +424,20 @@ function AccuratePencil() {
     let that = this
     let scene
 
+    // updates-stack
+    let takeOne = function (arr) {
+        return arr.splice(arr.length - 1, 1)[0]
+    }
+
+    let queueKnotFromBottomStatement = []
+    that.connectKnotToBottomStatement = function (bottomStatement, knotInstance) {
+        queueKnotFromBottomStatement.push(knotInstance)
+    }
+    that.constructKnot = function () {
+        return takeOne(queueKnotFromBottomStatement)
+    }
+    // keep !
+
     let queueAccurateKnot = []
     that.useScene = function (scene) {
         scene = that
@@ -346,13 +456,21 @@ function AccuratePencil() {
         // keep !
 
         // and there. it is program way, knot human way
-        for(let i = 0; i < queueKnot.length; i++) {
+        for(let i = 0; i < queueAccurateKnot.length; i++) {
             // chosen scene we take to ourself
             // it is a memory protection and a protection from high coupling
             queueAccurateKnot[i]['passThrough'](queueAccurateKnot[i]['spawnedPointerBelongings'])
         }
 
         // pointerBelongings
+    }
+}
+
+function KnotCore() {
+    let that = this
+
+    that.constructBottomStatement = function () {
+
     }
 }
 
@@ -436,6 +554,9 @@ function KnotFromBottomStatement(pencil) {
 
         let knotLocatePayload = new KnotLocatePayloadComputed()
 
+        let knotCore = new KnotCore()
+        let bottomStatementAtKnotLocate = knotCore.constructBottomStatement()
+
         // keep !
         knotFromBottomStatement.ctx.addEventListener('click', function (event) {
             let providedY = event.clientY
@@ -500,6 +621,8 @@ function KnotFromBottomStatement(pencil) {
                 pointerBelongings.fromBottomStatement(pointerBelongingsFromBottomStatement)
                 pointerBelongings.assignCoordinates(providedY, providedX)
 
+                // pass through
+
                 accuratePencil.rememberAccurateSample(sceneSpawnPointerBelongings, pointerBelongings)
                 accuratePencil.useScene(sceneSpawnPointerBelongings)
 
@@ -541,13 +664,31 @@ function KnotFromBottomStatement(pencil) {
 
             let pointerBelongingsAtKnotLocate = new PointerBelongingsAtKnotFromBottomStatement()
             pointerBelongingsAtKnotLocate.assignCoordinates(providedY, providedX)
+            pointerBelongingsAtKnotLocate.useKnotRelativeSize(that.knotRelativeSize)
 
+            // compute from knot relative size
             pointerBelongingsAtKnotLocate.compute()
 
-            accuratePencil.rememberAccurateSample(sceneSpawnPointerBelongings, pointerBelongingsAtKnotLocate)
+            let pointerBelongings = pointerBelongingsAtKnotLocate.pointerBelongings
+            // keep !
+            // let me see . that is possible through pencil
+            accuratePencil.connectKnotToBottomStatement(bottomStatementAtKnotLocate, new KnotPointerBelongingsFromBottomStatement())
+
+            let knotPointerBelongings = accuratePencil.constructKnot()
+
+            knotPointerBelongings.throughConstructedPointerBelongings(pointerBelongings)
+            knotPointerBelongings.compute()
+
+            pointerBelongingsAtKnotLocate.useKnot(knotPointerBelongings)
+            pointerBelongingsAtKnotLocate.compute()
+
+            accuratePencil.rememberAccurateSample(sceneSpawnPointerBelongings, knotPointerBelongings.throughSpawnedPointerBelongings(pointerBelongingsAtKnotLocate.pointerBelongings))
             accuratePencil.useScene(sceneSpawnPointerBelongings)
 
-            let pointerBelongingsFromFront = pointerBelongingsAtKnotLocate.getPointerBelongingsFromFrontStatement()
+            accuratePencil.draw()
+            process.exit()
+
+            let pointerBelongingsFromFront = knotPointerBelongings.getPointerBelongingsFromFrontStatement()
 
             dictSpawnFromBottomStatement[JSON.stringify({y: providedY, x: providedX})]['pointerBelongings'] = pointerBelongingsFromFront
             // keep memory protect
@@ -759,13 +900,15 @@ function KnotFromBottomStatement(pencil) {
         // keep !
         return knotFromBottomStatement
     }
+    // keep !
 
-    that.useRelativeSize = function (knotRelativeSize, traversar) {
+    that.useRelativeSize = function (knotRelativeSizeInstance, traversar) {
         let knotFromBottomStatement = that
         // keep !
 
         // use knot relative size
         // use pointer belongings
+        that.knotRelativeSize = knotRelativeSizeInstance
 
         return knotFromBottomStatement
     }
@@ -835,9 +978,11 @@ function Pencil() {
     // keep update-stack
     let knot
 
+    let accuratePencil = new AccuratePencil()
     // keep
     that.fromAccuratePencil = function () {
-
+        // keep !
+        return accuratePencil
     }
     // keep !
 
